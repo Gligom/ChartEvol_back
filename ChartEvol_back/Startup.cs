@@ -33,11 +33,11 @@ namespace ChartEvol_back
             services.AddMvc();
 
             //Datacontext
-            services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DataConnection")));
+            services.AddDbContext<PatientContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TestConnection")));
 
 
             services.AddScoped<IPatientRepository, PatientRepository>();
-            //services.AddSingleton<ITodoRepository, TodoRepository>();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,3 +50,5 @@ namespace ChartEvol_back
         }
     }
 }
+
+

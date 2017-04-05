@@ -12,6 +12,8 @@ namespace ChartEvol_back.Model
         public Patient()
         { }
 
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [DisplayName("Cod")]
         public int pacCod { get; set; }
 

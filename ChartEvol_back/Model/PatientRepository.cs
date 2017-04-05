@@ -7,18 +7,22 @@ namespace ChartEvol_back.Model
 {
     public class PatientRepository : IPatientRepository
     {
-        private readonly DataContext _context;
+        private readonly PatientContext _context;
 
-        public Patient Find(int key)
+        public PatientRepository(PatientContext context)
         {
-            return _context.Patient.FirstOrDefault(t => t.pacCod == key);
+            _context = context;
         }
 
         public IEnumerable<Patient> GetAll()
         {
-            return _context.Patient.ToList();
+            return _context.Pacienti.ToList();
         }
 
+        public Patient Find(int key)
+        {
+            return _context.Pacienti.FirstOrDefault(t => t.pacCod == key);
+        }
 
     }
 }

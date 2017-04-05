@@ -33,9 +33,9 @@ namespace ChartEvol_back.Controllers
         public IActionResult GetById(int id)
         {
             var item = _patientRepository.Find(id);
-            if(item == null)
+            if (item == null)
             {
-                return NotFound(); 
+                return NotFound();
             }
             return new ObjectResult(item);
         }

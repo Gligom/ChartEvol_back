@@ -10,16 +10,16 @@ namespace ChartEvol_back.Model
     
 
 
-    public class DataContext : DbContext
+    public class PatientContext : DbContext
     { 
-        public virtual DbSet<Patient> Patient { get; set; }
-
-            public DataContext(DbContextOptions<DataContext> options)
+        
+            public PatientContext(DbContextOptions<PatientContext> options)
                 : base(options)
             {
             }
+
+        public DbSet<Patient> Pacienti { get; set; }
     }
 
 }
-
 
